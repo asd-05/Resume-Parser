@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import base64,random
 import time,datetime
+import streamlit.components.v1 as com
+
 from pyresparser import ResumeParser
 from pdfminer3.layout import LAParams, LTTextBox
 from pdfminer3.pdfpage import PDFPage
@@ -17,6 +19,27 @@ import plotly.express as px
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
+st.set_page_config(
+    initial_sidebar_state="collapsed",
+    layout='wide',
+    page_title="Resume Parser",
+    page_icon='./Logo/respas2.ico',
+)
+
+with open("designs.css") as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-color: white;
+    }}
+    
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
 
 
 def get_table_download_link(df,filename,text):
@@ -54,6 +77,8 @@ def show_pdf(file_path):
     pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="1000" height="1000" type="application/pdf"></iframe>'
     st.markdown(pdf_display, unsafe_allow_html=True)
 
+
+
 # def course_recommender(course_list):
 #     st.subheader("**Courses & Certificates🎓 Recommendations**")
 #     c = 0
@@ -80,40 +105,37 @@ def insert_data(name,email,res_score,timestamp,no_of_pages,reco_field,cand_level
     cursor.execute(insert_sql, rec_values)
     connection.commit()
 
-st.set_page_config(
-    initial_sidebar_state="collapsed",
-    layout='wide',
-    page_title="Resume Parser",
-    page_icon='./Logo/respas2.ico',
-)
 def run():
-    st.markdown("<h1 style='text-align: center; color: #2E3840;'>🔍 Resume Parser</h1>", unsafe_allow_html=True)
-    with st.expander("ℹ️ - About this app", expanded=True):
-
-        st.write(
-        """     
-    -   The *Resume Parser* app is an easy-to-use interface built in Streamlit for the amazing results using various python libraries like [pyresparser](https://github.com/OmkarPathak/pyresparser) and [pdfminer](https://pypi.org/project/pdfminer/) !
-	    """
-    )
+    st.markdown("<html><head><link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'></head></head><link rel='stylesheet' href='<link href='https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap' rel='stylesheet'><link href='https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,400&display=swap' rel='stylesheet'><body><div class='headtextdiv'> <h1 class='resumeParser'>🔍 Resume Parser</h1><div class='flexbox'><div><h3 class='abouttext'>Streamlined Hiring, Scalable to Your Talent Acquisition Needs</h3><h4 class='abouttext2'> Make the hiring process twice as easy!</h4><h4 class='abouttext2'>Extract better quality data from CVs and spend less time on fixing mistakes in candidate profiles!</h4></div><img src='bg.jpg'></div></div><div class='cardsdiv'><div class='cardd'><h4 class='titleheading'>MY TITLE</h4><p class='desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, reprehenderit cupiditate voluptas odit consequuntur modi tempore ipsum cum et. Magnam quo dolorum perferendis sint corporis nesciunt fugiat</p></div><div class='cardd'><h4 class='titleheading'>MY TITLE</h4><p class='desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, reprehenderit cupiditate voluptas odit consequuntur modi tempore ipsum cum et. Magnam quo dolorum perferendis sint corporis nesciunt fugiat? Doloremque</p></div><div class='cardd'><h4 class='titleheading'>MY TITLE</h4><p class='desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, reprehenderit cupiditate voluptas odit consequuntur modi tempore ipsum cum et. Magnam quo dolorum perferendis sint corporis nesciunt fugiat? Doloremque</p></div></div></body></html>", unsafe_allow_html=True)
+    
+    
+    
+    # st.markdown("<div class='h1box'> <h1 class='resumeParser'>🔍 Resume Parser</h1></div>", unsafe_allow_html=True)
+    # st.markdown("<h3 class='abouttext'>About this app:</h3>", unsafe_allow_html=True)
+    # st.markdown("<h4 > The *Resume Parser* app is an easy-to-use interface built in Streamlit for the amazing results using various python libraries like pyresparser and pdfminer !</h4>", unsafe_allow_html=True)
+      
+    # with st.expander("ℹ️ - About this app", expanded=True):
+    
       
     st.markdown("")
     st.sidebar.markdown("# Choose Login")
     activities = ["Candidate Login", "Admin"]
     choice = st.sidebar.selectbox("Choose among the given options:", activities)
-    st.sidebar.markdown('''
-    ---
-    Created with ❤️ by     
-    [ANISH](https://github.com/asd-05)   
-    [REUBEN](https://github.com/ReubenArakkaparambil)    
-    [JOANNE](https://github.com/jo-daniel)    
-    [LAUKIK](https://github.com/laukik123)   
-    ''')
+    # st.sidebar.markdown('''
+    # ---
+    # Created with ❤️ by     
+    # [ANISH](https://github.com/asd-05)   
+    # [REUBEN](https://github.com/ReubenArakkaparambil)    
+    # [JOANNE](https://github.com/jo-daniel)    
+    # [LAUKIK](https://github.com/laukik123)   
+    # ''')
     img = Image.open('./Logo/respas1.jpg')
-    st.markdown("<h4 style= 'font-weight: bold;text-align: center; color: #2E3840;'>🤷Tired of Searching for Jobs?</h4>", unsafe_allow_html=True)
-    img = img.resize((450,350))
-    left_co, cent_co,last_co = st.columns(3)
-    with cent_co:
-        st.image(img)
+    # st.markdown("<h4 class='uploadresume'>🤷Tired of Searching for Jobs?</h4>", unsafe_allow_html=True)
+    # st.markdown("<html><div class='uploadresumediv'><h4 class='h4'>Review and know your resume's score now!</h4><p id='uploadtext'>Get instant grade and feedback on how to improve your resume to be as effective as possible. </p></div></html>", unsafe_allow_html=True)
+    # img = img.resize((450,350))
+    # left_co, cent_co,last_co = st.columns(3)
+    # with cent_co:
+    #     st.image(img)
 
     # Create the DB
     db_sql = """CREATE DATABASE IF NOT EXISTS SRA;"""
@@ -137,6 +159,7 @@ def run():
                     """
     cursor.execute(table_sql)
     if choice == 'Candidate Login':
+        st.markdown("<html><div class='uploadresumediv'><h4 class='h4'>Review and know your resume's score now!</h4><p id='uploadtext'>Get instant grade and feedback on how to improve your resume to be as effective as possible. </p></div></html>", unsafe_allow_html=True)
         pdf_file = st.file_uploader("Choose your Resume", type=["pdf"])
         if pdf_file is not None:
             with st.spinner('Uploading your Resume....'):
@@ -296,7 +319,7 @@ def run():
                         .stProgress > div > div > div > div {
                             background-color: #d73b5c;
                         }
-                    </style>""",
+                    </style=>""",
                     unsafe_allow_html=True,
                 )
                 my_bar = st.progress(0)
@@ -316,19 +339,23 @@ def run():
                 connection.commit()
             else:
                 st.error('Something went wrong..')
+            st.markdown("<div class='footer'><h2 class='footertext'>Created with ❤ by:<a class='a' href='https://github.com/asd-05'>Anish</a><a class='a' href='https://github.com/ReubenArakkaparambil'>Reuben</a><a class='a' href='https://github.com/jo-daniel'>Joanne</a><a class='a' href='https://github.com/laukik123'>Laukik</a></h2></div>", unsafe_allow_html=True)
+            
     else:
         ## Admin Side
-        st.success('Welcome to Admin Side')
-
-        ad_user = st.text_input("Username")
-        ad_password = st.text_input("Password", type='password')
+        st.markdown("<html><div class='uploadresumediv'><h4 class='h4'>Welcome to Admin Side</h4><h3 class='login'>Enter login credentials</h3></div></html>", unsafe_allow_html=True)
+       
+        ad_user = st.text_input("Enter Username")
+        ad_password = st.text_input("Enter Password", type='password')
         if st.button('Login'):
             if ad_user == 'resume_parser' and ad_password == 'test1234':
-                st.success("Welcome Admin")
+                # st.success("Welcome Admin")
+                st.markdown("<h4 class='adminwelcome'>Welcome Admin</h4>", unsafe_allow_html=True)
                 # Display Data
                 cursor.execute('''SELECT*FROM user_data''')
                 data = cursor.fetchall()
-                st.header("User's👨‍💻 Data")
+                # st.header("User's👨‍💻 Data")
+                st.markdown("<h4 class='admindisc'>Applicant's data</h4>", unsafe_allow_html=True)
                 df = pd.DataFrame(data, columns=['ID', 'Name', 'Email', 'Resume Score', 'Timestamp', 'Total Page',
                                                  'Predicted Field', 'User Level', 'Actual Skills', 'Recommended Skills',
                                                  'Recommended Course'])
@@ -343,17 +370,19 @@ def run():
                 print(labels)
                 values = plot_data.Predicted_Field.value_counts()
                 print(values)
-                st.subheader("📈 Pie-Chart for Predicted Field Recommendations ")
+                # st.subheader("📈 Pie-Chart for Predicted Field Recommendations ")
+                st.markdown("<h4 class='admindisc'>Pie-Chart for Predicted Field Recommendations</h4>", unsafe_allow_html=True)
                 fig = px.pie(df, values=values, names=labels, title='Predicted Field according to the Skills')
                 st.plotly_chart(fig)
 
                 ### Pie chart for User's👨‍💻 Experienced Level
                 labels = plot_data.User_level.unique()
                 values = plot_data.User_level.value_counts()
-                st.subheader("📈 Pie-Chart for User's👨‍💻 Experienced Level ")
+                # st.subheader("📈 Pie-Chart for User's👨‍💻 Experienced Level ")
+                st.markdown("<h4 class='admindisc'>Pie-Chart for User's👨‍💻 Experience Level</h4>", unsafe_allow_html=True)
                 fig = px.pie(df, values=values, names=labels, title="Pie-Chart📈 for User's👨‍💻 Experienced Level")
                 st.plotly_chart(fig)
-
+                st.markdown("<div class='footer'><h2 class='footertext'>Created with ❤ by:<a class='a' href='https://github.com/asd-05'>Anish</a><a class='a' href='https://github.com/ReubenArakkaparambil'>Reuben</a><a class='a' href='https://github.com/jo-daniel'>Joanne</a><a class='a' href='https://github.com/laukik123'>Laukik</a></h2></div>", unsafe_allow_html=True)
             else:
                 st.error("Wrong ID & Password Provided")
 run()
