@@ -1,0 +1,260 @@
+
+/* .css-1sylh24 {
+    position: absolute;
+    background:#3e86fa;
+    color: rgb(0, 0, 0);
+    inset: 0px;
+    overflow: hidden;
+}  */
+
+
+/* Header Bar */
+.css-1rpv1c0 {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 2.875rem;
+    background: #19191c;
+    outline: none;
+    z-index: 999990;
+    display: block;
+}
+
+/* Left arrow button on heaader bar */
+.css-fblp2m {
+    vertical-align: middle;
+    overflow: hidden;
+    color: white;
+    fill: currentcolor;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: -10px;
+    font-size: 1.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+/* Body */
+.css-z5fcl4 {
+    width: 100%;
+    padding: 1.8rem 3rem 10rem;
+    min-width: auto;
+    max-width: initial;
+}
+
+/* 'Resume Parser' box */
+/* .css-10trblm.e16nr0p30{
+    background-color: whitesmoke;
+    color: black;
+} */
+
+
+h1.resumeParser{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 500;
+    color: white;
+    font-weight: 400;
+    font-size: 7rem;
+    margin-left: 4rem;
+
+}
+
+h3.abouttext{
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 4rem;
+    margin-top: 1rem;
+    margin-left: 8rem;
+    color: white;
+    font-size: 4rem;
+    width: 50%;
+}
+
+h4.abouttext2{
+    font-family: 'Ubuntu', sans-serif;
+    margin-left:8rem; 
+    color: white;
+    width: 60%;
+} 
+
+.headtextdiv{
+    background-color: #3e86fa;
+    width: 107%;
+    height: 40rem;
+    margin: 0 -3rem;
+    padding-right: 6rem;
+}
+
+.flexbox{
+    display: flex;
+}
+
+.cardsdiv{
+    margin: 0 -3rem;
+    width: 107%;
+    height: 30rem;
+    background-color:white;  
+    display: flex;
+    justify-content: center;
+}
+
+.cardd{
+    margin: 2rem;
+    padding: 2rem;
+    justify-content: center;
+    width: 25rem;
+    height: 25rem;
+    background-color: #e4ecf9;
+    border: rgb(240,240,240);
+    border-radius: 2rem;
+    border-style: solid;
+    font-family: 'Ubuntu', sans-serif;
+} 
+
+.uploadresumediv{
+    background-color: #3e86fa;
+    height: 8rem;
+    margin: 0 -3rem;
+    margin-bottom: 2rem;
+    padding-right: 6rem;
+    width: 107%;
+    color: white;
+}
+
+/* to remove the green colored gap between .uploadresumediv and .cardsdiv */
+.css-vbpifr {
+    width: 1434px;
+    position: relative;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    gap: 0rem;
+}
+
+/* Review and know your score */
+h4.h4{
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 1.5rem;
+    line-height: 1.5rem;
+    margin-left: 8rem;
+    color: white;
+    font-size: 2.5rem;
+}
+
+#uploadtext{
+    font-family: 'Ubuntu', sans-serif;
+    margin-left:8rem; 
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* Sidebar */
+.css-1544g2n {
+    padding: 6rem 1rem 1.5rem;
+    background-color:#e4ecf9;
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    height: 50rem;
+}
+
+/* Sidebar text */
+.css-1544g2n h1 {
+    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Sidebar text-2 */
+.css-m6pagl p {
+    word-break: break-word;
+    font-size: 18px;
+    color: black;
+}
+
+/* Sidebar text-3 */
+.css-c89tq5 p{
+    word-break: break-word;
+    font-size: 18px;
+    color: black;
+}
+
+p.desc{
+    color: black;
+}
+
+/* Welcome to admin side text */
+.css-c89tq5 p {
+    word-break: break-word;
+    color: black;
+}
+
+/* Username & passord text */
+.css-m6pagl p {
+    word-break: break-word;
+    color: black;
+}
+
+/* Login */
+h3.login{
+font-family:'Ubuntu', sans-serif;
+margin-left:8rem; 
+color: white;
+font-size: 1.8rem;
+}
+
+/* Login button */
+.row-widget.stButton{
+    margin-top: 1.5rem;
+}
+
+.stAlert{
+    margin-top: 1rem;
+}
+
+h4.adminwelcome{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+}
+
+.admindisc{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    color: black;
+}
+
+.footer {
+    width: 107%;
+    background-color: #e4ecf9;
+    color: rgb(36, 33, 33);
+    font-family: 'Ubuntu', sans-serif;
+    height: 3rem;
+    margin: 0rem -3rem;
+    padding-bottom: 0rem;
+    display: grid;
+    margin-top: -10px;
+    justify-content: center;
+}
+
+.footertext{
+    font-size: 1.3rem;
+    margin-left: 8rem;
+}
+a{
+    margin: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.css-z5fcl4 {
+    width: 100%;
+    padding: 1.8rem 3rem 0rem;
+    min-width: auto;
+    max-width: initial;
+}
+
+.css-1cf1cqr {
+    margin-top: 1rem;
+    padding-left: 5rem;
+    background-color: #e4ecf9;
+}
