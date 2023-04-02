@@ -341,6 +341,10 @@ def run():
                 st.error('Something went wrong..')
             st.markdown("<div class='footer'><h2 class='footertext'>Created with ❤ by:<a class='a' href='https://github.com/asd-05'>Anish</a><a class='a' href='https://github.com/ReubenArakkaparambil'>Reuben</a><a class='a' href='https://github.com/jo-daniel'>Joanne</a><a class='a' href='https://github.com/laukik123'>Laukik</a></h2></div>", unsafe_allow_html=True)
             
+            # st.markdown("<footer id='footer'><div class='container-fluid'><div class='footingfoot'><h2 id='foot1bada'>Contact us</h2><p id='foot1chota'><a href="">Our Institution</a></p><br><p id='foot1chota'><a href="">Contributors</a></p><h2 id='foot2bada'>Creators</h2><p id='foot2chota'><a href="">Reuben </a></p><br><p id='foot2chota'><a href="">Laukik</a></p><br><p id='foot2chota'><a href="">Joanne</a></p><br><p id='foot2chota'><a href=""> Anish</a></p><h6 id='finalending'>© Team LaJr | All rights reserved</h6></div></div></footer>", unsafe_allow_html=True)
+
+            # st.markdown("<footer class='footer'><div class='container'><div class='row'><div class='footer-col'><h4>company</h4><ul><li><a href='#'>about us</a></li><li><a href='#'>our services</a></li><li><a href='#'>privacy policy</a></li></ul></div><div class='footer-col'><h4>Contributors</h4><ul><li><a href='#'>Reuben</a></li><li><a href='#'>Anish</a></li><li><a href='#'>Laukik</a></li><li><a href='#'>Joanne</a></li></ul></div><div class='footer-col'><h4>follow us</h4><div class='social-links'><a href='#'><i class='fab fa-facebook-f'></i></a><a href='#'><i class='fab fa-twitter'></i></a><a href='#'><i class='fab fa-instagram'></i></a><a href='#'><i class='fab fa-linkedin-in'></i></a></div></div></div></div></footer>",unsafe_allow_html=True )
+
     else:
         ## Admin Side
         st.markdown("<html><div class='uploadresumediv'><h4 class='h4'>Welcome to Admin Side</h4><h3 class='login'>Enter login credentials</h3></div></html>", unsafe_allow_html=True)
@@ -382,7 +386,13 @@ def run():
                 st.markdown("<h4 class='admindisc'>Pie-Chart for User's👨‍💻 Experience Level</h4>", unsafe_allow_html=True)
                 fig = px.pie(df, values=values, names=labels, title="Pie-Chart📈 for User's👨‍💻 Experienced Level")
                 st.plotly_chart(fig)
-                st.markdown("<div class='footer'><h2 class='footertext'>Created with ❤ by:<a class='a' href='https://github.com/asd-05'>Anish</a><a class='a' href='https://github.com/ReubenArakkaparambil'>Reuben</a><a class='a' href='https://github.com/jo-daniel'>Joanne</a><a class='a' href='https://github.com/laukik123'>Laukik</a></h2></div>", unsafe_allow_html=True)
+
+                # st.markdown("<div class='footer'><h2 class='footertext'>Created with ❤ by:<a class='a' href='https://github.com/asd-05'>Anish</a><a class='a' href='https://github.com/ReubenArakkaparambil'>Reuben</a><a class='a' href='https://github.com/jo-daniel'>Joanne</a><a class='a' href='https://github.com/laukik123'>Laukik</a></h2></div>", unsafe_allow_html=True)
+                
+                # st.markdown("<div class='footer'><h2 class='footertext'>Created with ❤ by:<a class='a' href='https://github.com/asd-05'>Anish</a><a class='a' href='https://github.com/ReubenArakkaparambil'>Reuben</a><a class='a' href='https://github.com/jo-daniel'>Joanne</a><a class='a' href='https://github.com/laukik123'>Laukik</a></h2></div>", unsafe_allow_html=True)
+                # st.markdown("<footer id='footer'><div class='container-fluid'><div class='footingfoot'><h2 id='foot1bada'>Contact us</h2><p id='foot1chota'><a href="">Our Institution</a></p><br><p id='foot1chota'><a href="">Contributors</a></p><p id='foot2bada'>Creators</p><p id='foot2chota'><a href="">Reuben </a></p><br><p id='foot2chota'><a href="">Laukik</a></p><br><p id='foot2chota'><a href="">Joanne</a></p><br><p id='foot2chota'><a href=""> Anish</a></p><h6 id='finalending'>© Team LaJr | All rights reserved</h6></div></div></footer>", unsafe_allow_html=True)
+
+                st.markdown("<footer class='footer'><div class='containerf'><div class='row'><div class='footer-col'><h4>company</h4><ul><li><a href='#'>about us</a></li><li><a href='#'>our services</a></li><li><a href='#'>privacy policy</a></li></ul></div><div class='footer-col'><h4>Contributors</h4><ul><li><a href='#'>Reuben</a></li><li><a href='#'>Anish</a></li><li><a href='#'>Laukik</a></li><li><a href='#'>Joanne</a></li></ul></div><div class='footer-col'><h4>follow us</h4><div class='social-links'><a href='#'><i class='fab fa-facebook-f'></i></a><a href='#'><i class='fab fa-twitter'></i></a><a href='#'><i class='fab fa-instagram'></i></a><a href='#'><i class='fab fa-linkedin-in'></i></a></div></div></div></div></footer>",unsafe_allow_html=True )
             else:
                 st.error("Wrong ID & Password Provided")
 run()
